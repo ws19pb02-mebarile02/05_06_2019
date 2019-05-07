@@ -31,8 +31,10 @@ for i, line in enumerate(lines, start = 1):
         print(f"UnicodeError: {unicodeError}")
         sys.exit(1)
 
-    s = s.rstrip("\r\n")         #Chop the trailing CRLF off of s.
-    print(f"{i:3}     {s}")
+    year, precipitation = s.split()   #year and precipitation are strings.
+    year = int(year)
+    precipitation = float(precipitation)   #Now year and precipitation are numbers.
+    print(f"{i:3}     {year:4}   {precipitation:6.2f}")
 
 lines.close()
 
