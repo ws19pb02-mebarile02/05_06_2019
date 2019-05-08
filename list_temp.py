@@ -28,23 +28,17 @@ Celcius (or e to Exit): ")
         break
     
     try:
-        type(float(temp)) == float
+        list_faren.append(float(temp))
     except ValueError:
         print("Not a number!")
-        continue
-
-    list_faren.append(float(temp))
+        
 
 list_faren.sort()  #put numbers into ascending order
 
-"""
-the following could probably use better formatting to handle large
-numbers
-"""
+d = "\u00b0"   #degree symbol
 
-for i, temp in enumerate(list_faren[:]):  
-    print(f"{list_faren[i]:10.2f}\u00b0F    ==> \
-{conToCelc(temp):10.2f}\u00b0C")
+for temp in list_faren:
+    print(f"{temp:10.2f}{d}F    ==> {conToCelc(temp):10.2f}{d}C")
 
 sys.exit(0)
     
